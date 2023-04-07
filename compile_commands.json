@@ -1,0 +1,51 @@
+[
+    {
+        "file": "/mnt/M2SSD/UnrealProjects/Invaders/Source/Invaders/DataTypes.h",
+        "arguments": [
+            "clang++ -std=c++20 -ferror-limit=0 -Wall -Wextra -Wpedantic -Wshadow-all -Wno-unused-parameter /mnt/M2SSD/UnrealProjects/Invaders/Source/Invaders/DataTypes.h @/mnt/M2SSD/UnrealProjects/Invaders/.vscode/compileCommands_Invaders/Invaders.151.rsp"
+        ],
+        "directory": "/mnt/M2SSD/Linux_Unreal_Engine_5.1.1/Engine/Source"
+    },
+    {
+        "file": "/mnt/M2SSD/UnrealProjects/Invaders/Source/Invaders/GameUtils.h",
+        "arguments": [
+            "clang++ -std=c++20 -ferror-limit=0 -Wall -Wextra -Wpedantic -Wshadow-all -Wno-unused-parameter /mnt/M2SSD/UnrealProjects/Invaders/Source/Invaders/GameUtils.h @/mnt/M2SSD/UnrealProjects/Invaders/.vscode/compileCommands_Invaders/Invaders.151.rsp"
+        ],
+        "directory": "/mnt/M2SSD/Linux_Unreal_Engine_5.1.1/Engine/Source"
+    },
+    {
+        "file": "/mnt/M2SSD/UnrealProjects/Invaders/Source/Invaders/Invaders.Build.cs",
+        "arguments": [
+            "clang++ -std=c++20 -ferror-limit=0 -Wall -Wextra -Wpedantic -Wshadow-all -Wno-unused-parameter /mnt/M2SSD/UnrealProjects/Invaders/Source/Invaders/Invaders.Build.cs @/mnt/M2SSD/UnrealProjects/Invaders/.vscode/compileCommands_Invaders/Invaders.151.rsp"
+        ],
+        "directory": "/mnt/M2SSD/Linux_Unreal_Engine_5.1.1/Engine/Source"
+    },
+    {
+        "file": "/mnt/M2SSD/UnrealProjects/Invaders/Source/Invaders/Invaders.cpp",
+        "arguments": [
+            "clang++ -std=c++20 -ferror-limit=0 -Wall -Wextra -Wpedantic -Wshadow-all -Wno-unused-parameter /mnt/M2SSD/UnrealProjects/Invaders/Source/Invaders/Invaders.cpp @/mnt/M2SSD/UnrealProjects/Invaders/.vscode/compileCommands_Invaders/Invaders.151.rsp"
+        ],
+        "directory": "/mnt/M2SSD/Linux_Unreal_Engine_5.1.1/Engine/Source"
+    },
+    {
+        "file": "/mnt/M2SSD/UnrealProjects/Invaders/Source/Invaders/Invaders.h",
+        "arguments": [
+            "clang++ -std=c++20 -ferror-limit=0 -Wall -Wextra -Wpedantic -Wshadow-all -Wno-unused-parameter /mnt/M2SSD/UnrealProjects/Invaders/Source/Invaders/Invaders.h @/mnt/M2SSD/UnrealProjects/Invaders/.vscode/compileCommands_Invaders/Invaders.151.rsp"
+        ],
+        "directory": "/mnt/M2SSD/Linux_Unreal_Engine_5.1.1/Engine/Source"
+    },
+    {
+        "file": "/mnt/M2SSD/UnrealProjects/Invaders/Source/Invaders/InvadersGameMode.cpp",
+        "arguments": [
+            "clang++ -std=c++20 -ferror-limit=0 -Wall -Wextra -Wpedantic -Wshadow-all -Wno-unused-parameter /mnt/M2SSD/UnrealProjects/Invaders/Source/Invaders/InvadersGameMode.cpp @/mnt/M2SSD/UnrealProjects/Invaders/.vscode/compileCommands_Invaders/Invaders.151.rsp"
+        ],
+        "directory": "/mnt/M2SSD/Linux_Unreal_Engine_5.1.1/Engine/Source"
+    },
+    {
+        "file": "/mnt/M2SSD/UnrealProjects/Invaders/Source/Invaders/InvadersGameMode.h",
+        "arguments": [
+            "clang++ -std=c++20 -ferror-limit=0 -Wall -Wextra -Wpedantic -Wshadow-all -Wno-unused-parameter /mnt/M2SSD/UnrealProjects/Invaders/Source/Invaders/InvadersGameMode.h @/mnt/M2SSD/UnrealProjects/Invaders/.vscode/compileCommands_Invaders/Invaders.151.rsp"
+        ],
+        "directory": "/mnt/M2SSD/Linux_Unreal_Engine_5.1.1/Engine/Source"
+    }
+]
