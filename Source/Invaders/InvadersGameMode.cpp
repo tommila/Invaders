@@ -40,19 +40,9 @@ void AInvadersGameMode::InitGame(const FString& MapName,
                                  FString& ErrorMessage) {
     Super::InitGame(MapName, Options, ErrorMessage);
     const int EnemyNum = Rules.EnemiesInRow * Rules.EnemiesInColumn;
-    InvadersGameState = {.LevelStarted = false,
-                         .EnemyProgTime = 0,
-                         .EnemyAppearAnimTime = 0,
-                         .PlayerAppearAnimTime = 0,
-                         .UfoProgTime = 0,
-                         .TotalEnemyNum = EnemyNum,
-                         .ActiveEnemyNum = EnemyNum,
-                         .ActiveEnemyBullets = 0,
-                         .ActivePlayerBullets = 0,
-                         .CurrentLevel = 0,
-                         .CurrentLives = PlayerDef.Lives,
-                         .Score = 0,
-                         .HiScore = 0};
+    InvadersGameState = {
+        false, 0, 0, 0, 0, EnemyNum, EnemyNum, 0, 0, 0, PlayerDef.Lives, 0,
+    };
 
     PlayerBullets.Reserve(MAX_BULLETS);
     EnemyBullets.Reserve(MAX_BULLETS);
@@ -285,7 +275,7 @@ void AInvadersGameMode::ShowMainMenu() {
 
     UTextBlock* HiScoreText =
         Cast<UTextBlock>(MainMenuWidget->GetWidgetFromName("HiScoreTxt"));
-
+    InvadersGameState.PrevHiScore = InvadersGameState.HiScore;
     GameUtils::UpdateScoreTexts(InvadersGameState, HiScoreText);
     GameUtils::EnableUIMenu(Controller, MainMenuWidget, StartGameButton);
 }
@@ -633,7 +623,8 @@ void AInvadersGameMode::UpdatePlayerBullets(float DeltaSeconds) {
                 BulletActor->GetActorLocation(), FMath::RandRange(0.2, 0.5));
         }
         if (DeleteBullet) {
-            AActor* LastBullet = PlayerBullets[InvadersGameState.ActivePlayerBullets - 1];
+            AActor* LastBullet =
+                PlayerBullets[InvadersGameState.ActivePlayerBullets - 1];
             LastBullet->SetActorHiddenInGame(true);
             LastBullet->SetActorEnableCollision(false);
             BulletActor->SetActorLocation(LastBullet->GetActorLocation());
@@ -705,7 +696,8 @@ void AInvadersGameMode::UpdateEnemyBullets(float DeltaSeconds) {
         }
 
         if (DeleteBullet) {
-            AActor* LastBullet = EnemyBullets[InvadersGameState.ActiveEnemyBullets - 1];
+            AActor* LastBullet =
+                EnemyBullets[InvadersGameState.ActiveEnemyBullets - 1];
             LastBullet->SetActorHiddenInGame(true);
             LastBullet->SetActorEnableCollision(false);
             BulletActor->SetActorLocation(LastBullet->GetActorLocation());
@@ -821,8 +813,7 @@ void AInvadersGameMode::EnemyShootTimerCallback() {
             AActor* EnemyActor = EnemyShips[ShootingEnemies[FMath::RandRange(
                 0, ShootingEnemies.Num() - 1)]];
             FVector EnemyPos = EnemyActor->GetActorLocation();
-            AActor* Bullet =
-                EnemyBullets[InvadersGameState.ActiveEnemyBullets];
+            AActor* Bullet = EnemyBullets[InvadersGameState.ActiveEnemyBullets];
             Bullet->SetActorLocation(EnemyPos);
             Bullet->SetActorEnableCollision(true);
             Bullet->SetActorHiddenInGame(false);
@@ -987,9 +978,8 @@ void AInvadersGameMode::SaveHiScore() {
             Cast<UInvadersSaveGame>(UGameplayStatics::CreateSaveGameObject(
                 UInvadersSaveGame::StaticClass()))) {
         SaveGameInstance->HiScore = InvadersGameState.HiScore;
-        if (UGameplayStatics::SaveGameToSlot(SaveGameInstance,
-                                             "InvadersSaveSlot", 0)) {
-        }
+        UGameplayStatics::SaveGameToSlot(SaveGameInstance, "InvadersSaveSlot",
+                                         0);
     }
 }
 

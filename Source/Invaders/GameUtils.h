@@ -8,8 +8,8 @@
 namespace GameUtils {
 
 inline void UpdateScoreTexts(FInvadersGameState& State,
-                      UTextBlock* HiScoreText,
-                      UTextBlock* CurScoreText = nullptr) {
+                             UTextBlock* HiScoreText,
+                             UTextBlock* CurScoreText = nullptr) {
     FString HiScoreStr = "hiscore: " + FString::FromInt(State.PrevHiScore);
     HiScoreText->SetText(FText::FromString(HiScoreStr));
 
@@ -23,8 +23,8 @@ inline void UpdateScoreTexts(FInvadersGameState& State,
 }
 
 inline void EnableUIMenu(APlayerController* Controller,
-                  UUserWidget* MenuWidget,
-                  UButton* FocusedButton = nullptr) {
+                         UUserWidget* MenuWidget,
+                         UButton* FocusedButton = nullptr) {
     FInputModeGameAndUI InputMode;
     if (FocusedButton) {
         InputMode.SetWidgetToFocus(FocusedButton->GetCachedWidget());
